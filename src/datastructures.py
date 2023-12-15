@@ -27,14 +27,14 @@ class Family:
                 "first_name": "Jane",
                 "last_name": "Jackson",
                 "age":35,
-                "Lucky Numbers": [10, 14, 3]
+                "lucky_numbers": [10, 14, 3]
             },
             {
                 "id": self._generateId(),
                 "first_name": "Jimmy",
                 "last_name": "Jackson",
                 "age":5,
-                "Lucky Numbers": [1]
+                "lucky_numbers": [1]
             }
         ]
 
