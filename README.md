@@ -2,7 +2,7 @@
 # Family Static API
 <!-- endhide -->
 
-La familia Jackson neecesita una una API estática, por eso he construido para ellos una estructura de datos y endpoints con métodos para agregar, eliminar, actualizar y obtener miembros de la familia e interactuar usando Postman!
+La familia Jackson necesita una una API estática, por eso he construido para ellos una estructura de datos y endpoints con métodos para agregar, eliminar, actualizar y obtener miembros de la familia e interactuar usando Postman!
 
 **👉 Por favor siga estos pasos en** [how to start a coding project](https://4geeks.com/lesson/how-to-start-a-project).
 
