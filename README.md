@@ -2,50 +2,31 @@
 # Family Static API
 <!-- endhide -->
 
-The Jackson Family needs a static API! We need to build the *data structures* and create API endpoint to interact with it using Postman.
+La familia Jackson neecesita una una API estática, por eso he construido para ellos una estructura de datos y endpoints con métodos para agregar, eliminar, actualizar y obtener miembros de la familia e interactuar usando Postman!
 
-## 🌱  How to start this project
-
-This project comes with the necessary files to start working immediately.
-
-We recommend opening this very same repository using a provisioning tool like [Codespaces](https://4geeks.com/lesson/what-is-github-codespaces) (recommended) or [Gitpod](https://4geeks.com/lesson/how-to-use-gitpod). Alternatively, you can clone it on your local computer using the `git clone` command.
-
-This is the repository you need to open:
-
-```txt
-https://github.com/breatheco-de/exercise-family-static-api
-```
-
-**👉 Please follow these steps on** [how to start a coding project](https://4geeks.com/lesson/how-to-start-a-project).
+**👉 Por favor siga estos pasos en** [how to start a coding project](https://4geeks.com/lesson/how-to-start-a-project).
 
 ## 💻 Installation
 
-2. Install the project dependencies by running `$ pipenv install`.
+1. Instale las dependencias del proyecto ejecutando `$ pipenv install`.
+2. Ingrese al entorno virtual ejecutando `$ pipenv shell`
+3. Inicie el servidor ejecutando `$ pipenv run start`
+4. Pruebe su código ejecutando `$ pipenv run test`
 
-3. Get inside the virtual environment by running `$ pipenv shell`
-
-4. Start the server by running `$ pipenv run start`
-
-5. Test your code by running `$ pipenv run test`
-
-## ✅ Automatic grading
-
-Test your code by running `$ pipenv run test`
 
 ## 📝 Instructions
 
-1) Create the code needed to implement the API endpoints described further below.  
+1) he creado el código necesario para implementar los endpoints de la API que se describen más adelante.
 
-2) The only two files you have to edit are:  
+2) He editado los siguientes archivos: 
 
-- `src/datastructure.py`: Contains the class with the rules on how to manage the family members.  
-- `src/app.py`: Contains the API, it uses the Family as data structure. 
+- `src/datastructure.py`: Contiene la clase con las reglas sobre cómo administrar a los miembros de la familia.
+- `src/app.py`: Contiene la API, utiliza la Familia como estructura de datos.
 	
-3) We have prepared a set of automated tests that will give you an idea if your code is correct, run the tests by typing `$ pipenv run test` on the command line.  
 
 ## Data structures
 
-Every **member** of the Jackson family must be a dictionary - the equivalent of [Objects Literals in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects) - and have these values:
+Cada **miembro** de la familia Jackson es  un diccionario, el equivalente a  [Objects Literals in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects) - y tiene estos valores:
 
 ```python
     + id: Int
@@ -54,7 +35,7 @@ Every **member** of the Jackson family must be a dictionary - the equivalent of 
     + age: Int > 0
     + lucky_numbers: Array of int
 ```
-The **family** data-structure will be a class with the following structure:
+La estructura de datos **familia** sigue una clase con la siguiente estructura:
 
 ```python
 class Family:
@@ -96,8 +77,6 @@ class Family:
         return self._members
 ```
 
-Note: don't forget to initialize the class: `jackson_family = FamilyStructure('Jackson')` *before* the routes.
-
 ## These are the initial Family Members
 
 ```md
@@ -116,11 +95,9 @@ Lucky Numbers: 1
 
 ## Endpoints
 
-This API must have 4 endpoints. They all return JSON:
+Esta API tiene 4 puntos finales. Todos devuelven JSON:
 
-### 1) Get all family members:
-
-Which returns all members of the family.
+### 1) GET: que devuelve a todos los miembros de la familia.
 
 ```md
 GET /members
@@ -133,9 +110,7 @@ RESPONSE BODY (content-type: application/json):
 
 ```
 
-### 2) Retrieve one member
-
-Which returns the member of the family where `id == member_id`.
+### 2) Recuperar a un miembro:
 
 ```md
 GET /member/<int:member_id>
@@ -155,9 +130,7 @@ body: //the member's json object
 
 ```
 
-### 3) Add (POST) new member
-
-Which adds a new member to the family data structure.
+### 3) Agregar (POST) a un nuevo miembro:
 
 ```md
 POST /member
@@ -178,13 +151,8 @@ status_code: 200 if success. 400 if a bad request (wrong info) screw up, 500 if 
 body: empty
 ```
 
-Keep in mind that POST request data dictionary may contain a key and a value for this new member `id`.
-- If it does not, your API should randomly generate one when adding family members.
-- If it does include it, that is the value to be used for such end.
 
-### 4) DELETE one member
-
-Which deletes a family member with `id == member_id`
+### 4) DELETE borrar a un miembro con `id == member_id`
 
 ```md
 DELETE /member/<int:member_id>
@@ -199,10 +167,10 @@ body: {
 
 ```
 
-## Requirements
+## Requisitos
 
-- All requests and responses should be in content/type: application/json
-- Response codes must be `200` for success, `400` for bad request or `404` for not found.
-- These exercises do not include a database, everything must be done in Runtime (RAM).
+- Todas las solicitudes y respuestas deben estar en contenido/tipo: aplicación/json
+- Los códigos de respuesta deben ser `200` para éxito, `400` para solicitud incorrecta o `404` para no encontrado.
+- Estos ejercicios no incluyen base de datos, todo debe realizarse en Runtime (RAM).
 
-This and many other projects are built by students as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
+Este proyecto fue creado como parte de las actividades de 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) y otros colaboradores. Descubre más en [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
